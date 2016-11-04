@@ -4,6 +4,7 @@ node {
  sh """ 
     #export DOCKER_HOST="unix:///var/run/docker.sock"
     docker-compose build
+    echo $(whoami)
     docker-compose run web python manage.py migrate
     docker-compose run web python manage.py populatedb --createsuperuser
     docker-compose up
