@@ -1,0 +1,5 @@
+node {
+ stage "checkout python code"
+ git url: 'https://github.com/mirumee/django-payments.git'
+ sh 'git status'
+} 
