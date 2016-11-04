@@ -10,6 +10,6 @@ node {
     sudo docker-compose --project-name=${JOB_NAME} build
     sudo docker-compose run web python manage.py migrate
     sudo docker-compose run web python manage.py populatedb --createsuperuser
-    sudo docker-compose -d up
+    sudo docker-compose --project-name=${JOB_NAME} up -d
     """
 } 
