@@ -8,8 +8,8 @@ node {
     sudo docker rm -v `docker ps -a -q -f status=exited` || /bin/true
     sudo docker rmi `docker images --filter 'dangling=true' -q --no-trunc` || /bin/true
     sudo docker-compose --project-name=${JOB_NAME} build
-    sudo docker-compose run web python manage.py migrate
-    sudo docker-compose run web python manage.py populatedb --createsuperuser
+    sudo docker-compose --project-name=${JOB_NAME} run web python manage.py migrate
+    sudo docker-compose --project-name=${JOB_NAME} run web python manage.py populatedb --createsuperuser
     sudo docker-compose --project-name=${JOB_NAME} up -d
     """
 } 
