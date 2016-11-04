@@ -16,6 +16,6 @@ node {
     sudo docker ps
     sudo docker-compose --project-name=${JOB_NAME} run web python manage.py populatedb --createsuperuser
     sudo docker ps
-    sudo docker-compose --project-name=${JOB_NAME} run web python manage.py test
+    sudo docker-compose --project-name=${JOB_NAME} run web py.test
     """
 } 
