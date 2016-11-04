@@ -4,9 +4,9 @@ node {
  sh """ 
     whoami
     id
-    sudo docker-compose build
+    sudo docker-compose  build
     sudo docker-compose run web python manage.py migrate
     sudo docker-compose run web python manage.py populatedb --createsuperuser
-    sudo docker-compose up
+    sudo docker-compose -d up
     """
 } 
