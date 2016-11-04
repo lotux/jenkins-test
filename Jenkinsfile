@@ -2,7 +2,6 @@ node {
  stage "checkout"
  git url: 'https://github.com/mirumee/saleor.git'
  sh """ 
-    #export DOCKER_HOST="unix:///var/run/docker.sock"
     docker-compose build
     echo $(whoami)
     docker-compose run web python manage.py migrate
