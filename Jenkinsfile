@@ -2,6 +2,7 @@ node {
  stage "checkout"
  git url: 'https://github.com/mirumee/saleor.git'
  sh """
+    source ~/.bash_profile
     nvm install node
     nvm use node
     npm install
